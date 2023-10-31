@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UVCE ISE 26</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body oncontextmenu="return false">
+  <nav>
+    <ul class="menu">
+      <li><a href="#userName" data-text="WELCOME TO UVCE ISE" id="userName"></a></li>
+      <li><a href="#home" data-text="HOME" id="homeLink">HOME</a></li>
+      <li><a href="#fam" data-text="FAM" id="famLink">FAM</a></li>
+      <li><a href="#gallery" data-text="GALLERY" id="galleryLink">GALLERY</a></li>
+      <li><a href="#abtUvce" data-text="ABOUT UVCE" id="abtUvceLink">ABOUT UVCE</a></li>
+      <li><a href="#updates" data-text="UPDATES" id="updatesLink">UPDATES</a></li>
+      <li><a href="#achievements" data-text="ACHIEVEMENTS" id="achievementsLink">ACHIEVEMENTS</a></li>
+      <li><a href="#contactUs" data-text="CONTACT US" id="contactUsLink">CONTACT US</a></li><br></br>
+    </ul>
+    <input type="checkbox" role="button" aria-label="Display the menu" class="hamburger">
+  </nav>
+  <h1 style="position:relative; margin-top:250px;">Hover on Menu List</h1>
+  <div id="home">
+    <video src="video.mp4" autoplay muted id="myvideo" style="height:75%; width:75%; margin-top:100px;">
+    </video>
+    <div id="container">
+      <span id="text1"></span>
+      <span id="text2"></span>
+    </div>
+    <svg id="filters" style="display: none;">
+      <defs>
+        <filter id="threshold">
+          <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 255 -140" />
+        </filter>
+      </defs>
+    </svg>
+    <p style="margin-top: 50px;">
+      Welcome to the UVCE ISE'26 Website hub! As the graduating class of 2026 from the Information Science and
+      Engineering department at UVCE, we're more than just a class - we're a community committed to holistic growth.
+    </p>
+    <p>
+      *Our Vision:* Beyond technology, we're dedicated to nurturing well-rounded professionals. We embrace a diverse
+      range of interests, from tech innovation to co-curricular excellence. With a strong foundation in tech, we're
+      driving innovation and exploring the frontiers of different spaces. Our achievements and projects showcase our
+      commitment to technical excellence. But our journey isn't confined only to code. We're passionate about
+      co-curricular activities, from sports to arts. Our events and achievements reflect a balanced approach to
+      education.
+    </p>
+    <p>
+      *Community and Connections:* Join us in our journey! As a community, we conduct engaging events that foster
+      collaboration and personal growth. We're proud to share the achievements of our class students - from winning
+      coding competitions to excelling in debates.Whether you're an alumnus, a prospective student, or a fellow tech
+      enthusiast, we invite you to join our network. Connect with us to stay updated on our tech advancements,
+      co-curricular successes, events, and more.
+    </p>
+  </div>
+  <div id="fam"></div>
+  <div id="gallery"></div>
+  <div id="abtUvce"></div>
+  <div id="updates"></div>
+  <div id="achievements"></div>
+  <div id="contactUs">
+    <input type="text" x-webkit-speech />
+    <input type="file" capture="user" accept="image/*">
+  </div>
+
+  <meta http-equiv="refresh"
+    content="10;https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTAxL3B4OTQxMTQ5LWltYWdlLTAyLWpvYjE1NDMucG5n.png">
+
+  <script src="script.js"></script>
+</body>
+
+</html>

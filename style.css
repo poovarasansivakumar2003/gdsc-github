@@ -1,0 +1,322 @@
+@import url("https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Raleway:900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #efeab2;
+    color: white;
+}
+
+nav {
+    position: relative;
+    top: 30px;
+    width: 100%;
+    height: 30px;
+}
+
+.menu {
+    padding: 16px;
+    list-style: none;
+    font-size: 21px;
+    font-weight: 700;
+    text-align: center;
+}
+
+#userName {
+    width: 288px;
+}
+
+.menu li a {
+    float: left;
+    color: #000;
+    text-decoration: none;
+    padding: 5px 20px;
+    transition: 0.5s;
+}
+
+.menu:hover li a {
+    color: #0002;
+}
+
+.menu li:hover a {
+    color: #000;
+    background: transparent;
+}
+
+.menu li a:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 86px;
+    color: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0;
+    font-weight: 900;
+    transition: left 0.5s;
+}
+
+.menu li a:hover:before {
+    content: attr(data-text);
+    opacity: 1;
+    left: 50%;
+    letter-spacing: 10px;
+    width: 1800px;
+    height: 1800px;
+}
+
+.menu li:nth-child(6n + 1) a:before {
+    background: #0470fe;
+}
+
+.menu li:nth-child(6n + 2) a:before {
+    background: #ff7675;
+}
+
+.menu li:nth-child(6n + 3) a:before {
+    background: #1682fe;
+}
+
+.menu li:nth-child(6n + 4) a:before {
+    background: #a29bfe;
+}
+
+.menu li:nth-child(6n + 5) a:before {
+    background: #fd79a8;
+}
+
+.menu li:nth-child(6n + 6) a:before {
+    background: #f5ce4f;
+}
+
+.menu li:nth-child(6n + 7) a:before {
+    background: #34ec34a1;
+}
+
+.menu li:nth-child(6n + 8) a:before {
+    background: #fb62da;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    float: right;
+    --s: 30px;
+    /* control the size */
+    --c: black;
+    /* the color */
+    height: var(--s);
+    aspect-ratio: 1;
+    border: none;
+    padding: 0;
+    border-inline: calc(var(--s)/2) solid #0000;
+    box-sizing: content-box;
+    --_g1: linear-gradient(var(--c) 20%, #0000 0 80%, var(--c) 0) no-repeat content-box border-box;
+    --_g2: radial-gradient(circle closest-side at 50% 12.5%, var(--c) 95%, #0000) repeat-y content-box border-box;
+    background:
+        var(--_g2) left var(--_p, 0px) top,
+        var(--_g1) left calc(var(--s)/10 + var(--_p, 0px)) top,
+        var(--_g2) right var(--_p, 0px) top,
+        var(--_g1) right calc(var(--s)/10 + var(--_p, 0px)) top;
+    background-size:
+        20% 80%,
+        40% 100%;
+    position: relative;
+    clip-path: inset(0 25%);
+    -webkit-mask: linear-gradient(90deg, #0000, #000 25% 75%, #0000);
+    transition:
+        background-position .3s var(--_s, .3s),
+        clip-path 0s var(--_s, .6s);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.hamburger:before,
+.hamburger:after {
+    content: "";
+    position: absolute;
+    border-radius: var(--s);
+    inset: 40% 0;
+    background: var(--c);
+    transition: transform .3s calc(.3s - var(--_s, .3s));
+}
+
+.hamburger:checked {
+    clip-path: inset(0);
+    --_p: calc(-1*var(--s));
+    --_s: 0s;
+}
+
+.hamburger:checked:before {
+    transform: rotate(45deg);
+}
+
+.hamburger:checked:after {
+    transform: rotate(-45deg);
+}
+
+.hamburger:focus-visible {
+    clip-path: none;
+    -webkit-mask: none;
+    border: none;
+    outline: 2px solid var(--c);
+    outline-offset: 5px;
+}
+
+#container {
+    position: absolute;
+    margin-top: 200px;
+    width: 100vw;
+    height: 280px;
+    top: 400px;
+    bottom: 0;
+    filter: url(#threshold) blur(0.6px);
+}
+
+#text1,#text2 {
+    position: absolute;
+    color: #1682fe;
+    width: 100%;
+    display: inline-block;
+    font-family: "Raleway", sans-serif;
+    font-size: 80pt;
+    text-align: center;
+    user-select: none;
+}
+
+#home{
+    color: chocolate;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-left: 45px;
+    margin-right: 45px;
+    gap: 14px;
+    display: none;
+}
+
+#fam{
+    display: none;
+    flex-direction: column;
+    margin-left: 45px;
+    margin-right: 45px;
+    gap: 14px;
+    align-items: center;
+}
+
+#gallery{
+    display: none;
+    flex-direction: column;
+    margin-left: 45px;
+    margin-right: 45px;
+    gap: 14px;
+    align-items: center;
+}
+
+#abtUvce{
+    display: none;
+    flex-direction: column;
+    margin-left: 45px;
+    margin-right: 45px;
+    gap: 14px;
+    align-items: center;
+}
+
+#updates{
+    display: none;
+    flex-direction: column;
+    margin-left: 45px;
+    margin-right: 45px;
+    gap: 14px;
+    align-items: center;
+}
+
+#achievements{
+    display: none;
+    flex-direction: column;
+    margin-left: 45px;
+    margin-right: 45px;
+    gap: 14px;
+    align-items: center;
+}
+
+#contactUs{
+    display: none;
+    flex-direction: column;
+    margin-left: 45px;
+    margin-right: 45px;
+    gap: 14px;
+    align-items: center;
+}
+
+
+
+
+@media (max-width: 1104px) {
+    .menu {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+        margin-top: 24px;
+    }
+
+    .menu.open {
+        display: block;
+        position: absolute;
+        right: 0%;
+        margin-top: 55px;
+    }
+
+    #userName {
+        width: fit-content;
+    }
+
+    .menu.open li {
+        float: right;
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+        padding: 0 30px;
+        width: 75%;
+        border-radius: 50px;
+        text-align: center;
+    }
+
+    .menu li a:before {
+        font-size: 25px;
+        transition: left 0.5s;
+        transform: translate(-421px, -92%);
+    }
+
+    .menu li a:hover:before {
+        letter-spacing: 0px;
+        width: 800px;
+        height: 1000px;
+    }
+    
+    #home.goDown{
+        margin-top: 450px;
+    }
+
+    #text1,#text2 {
+        font-size: 40pt;
+    }
+}
