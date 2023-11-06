@@ -1,16 +1,16 @@
-let name = prompt("Enter your name (up to 10 letters)");
-while (name === null || name === "" || name.length > 10) {
-    if (name === null || name === "") {
-        alert("Please enter your name.");
-    } else {
-        alert("Please enter your name with up to 10 letters.");
-    }
-    name = prompt("Enter your name (up to 10 letters)");
-}
+// let name = prompt("Enter your name (up to 10 letters)");
+// while (name === null || name === "" || name.length > 10) {
+//     if (name === null || name === "") {
+//         alert("Please enter your name.");
+//     } else {
+//         alert("Please enter your name with up to 10 letters.");
+//     }
+//     name = prompt("Enter your name (up to 10 letters)");
+// }
 
-name = name.toUpperCase();
-alert('Welcome to UVCE ISE, ' + name);
-document.getElementById('userName').innerHTML = 'HELLO, ' + name;
+// name = name.toUpperCase();
+// alert('Welcome to UVCE ISE, ' + name);
+// document.getElementById('userName').innerHTML = 'HELLO, ' + name;
 
 const hamburger = document.querySelector(".hamburger");
 const menu = document.querySelector(".menu");
@@ -28,6 +28,7 @@ const achievementsLink = document.getElementById("achievementsLink");
 const achievements = document.getElementById("achievements");
 const contactUsLink = document.getElementById("contactUsLink");
 const contactUs = document.getElementById("contactUs");
+const setting = document.querySelector(".setting");
 
 hamburger.onclick = function () {
     hamburger.classList.toggle('close');
@@ -39,15 +40,24 @@ const menuLink = [homeLink, famLink, galleryLink, abtUvceLink, updatesLink, achi
 const menuList = [home, fam, gallery, abtUvce, updates, achievements, contactUs];
 
 for (let i = 0; i < menuLink.length; i++) {
-    menuLink[i].addEventListener('mouseover', function() {
+    menuLink[i].addEventListener('mouseover', function () {
+        
         // Hide all menu items first
         for (let j = 0; j < menuList.length; j++) {
             menuList[j].style.display = "none";
         }
+
         // Display the corresponding menu item
         menuList[i].style.display = "flex";
+        setting.style.display = "none";
+
+    });
+
+    menuLink[i].addEventListener('mouseout', function () {
+        setting.style.display = "flex";
     });
 }
+
 
 const elts = {
     text1: document.getElementById("text1"), text2: document.getElementById("text2")
@@ -60,6 +70,7 @@ let time = new Date(); let morph = 0;
 let cooldown = cooldownTime;
 elts.text1.textContent = texts[textIndex % texts.length];
 elts.text2.textContent = texts[(textIndex + 1) % texts.length];
+
 function doMorph() {
     morph -= cooldown; cooldown = 0;
     let fraction = morph / morphTime;
@@ -68,6 +79,7 @@ function doMorph() {
     }
     setMorph(fraction);
 }
+
 function setMorph(fraction) {
     elts.text2.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
     elts.text2.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
@@ -76,12 +88,14 @@ function setMorph(fraction) {
     elts.text1.textContent = texts[textIndex % texts.length];
     elts.text2.textContent = texts[(textIndex + 1) % texts.length];
 }
+
 function doCooldown() {
     morph = 0; elts.text2.style.filter = "";
     elts.text2.style.opacity = "100%";
     elts.text1.style.filter = "";
     elts.text1.style.opacity = "0%";
 }
+
 function animate() {
     requestAnimationFrame(animate);
     let newTime = new Date();
