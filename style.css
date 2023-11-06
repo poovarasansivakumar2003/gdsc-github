@@ -13,8 +13,6 @@ body {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    background-color: #efeab2;
-    color: white;
 }
 
 nav {
@@ -22,6 +20,7 @@ nav {
     top: 30px;
     width: 100%;
     height: 30px;
+    color: white;
 }
 
 .menu {
@@ -179,17 +178,24 @@ nav {
     outline-offset: 5px;
 }
 
+.setting {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    border: 5px;
+    border-radius: 20px;
+    margin-top: 100px;
+}
+
 #container {
     position: absolute;
-    margin-top: 200px;
     width: 100vw;
-    height: 280px;
-    top: 400px;
-    bottom: 0;
+    top: 320px;
     filter: url(#threshold) blur(0.6px);
 }
 
-#text1,#text2 {
+#text1,
+#text2 {
     position: absolute;
     color: #1682fe;
     width: 100%;
@@ -200,73 +206,22 @@ nav {
     user-select: none;
 }
 
-#home{
+#home,
+#fam,
+#gallery,
+#abtUvce,
+#updates,
+#achievements,
+#contactUs {
     color: chocolate;
-    align-items: center;
-    display: flex;
+    size: 35px;
     flex-direction: column;
-    margin-left: 45px;
-    margin-right: 45px;
-    gap: 14px;
-    display: none;
-}
-
-#fam{
-    display: none;
-    flex-direction: column;
+    margin-top: 100px;
     margin-left: 45px;
     margin-right: 45px;
     gap: 14px;
     align-items: center;
 }
-
-#gallery{
-    display: none;
-    flex-direction: column;
-    margin-left: 45px;
-    margin-right: 45px;
-    gap: 14px;
-    align-items: center;
-}
-
-#abtUvce{
-    display: none;
-    flex-direction: column;
-    margin-left: 45px;
-    margin-right: 45px;
-    gap: 14px;
-    align-items: center;
-}
-
-#updates{
-    display: none;
-    flex-direction: column;
-    margin-left: 45px;
-    margin-right: 45px;
-    gap: 14px;
-    align-items: center;
-}
-
-#achievements{
-    display: none;
-    flex-direction: column;
-    margin-left: 45px;
-    margin-right: 45px;
-    gap: 14px;
-    align-items: center;
-}
-
-#contactUs{
-    display: none;
-    flex-direction: column;
-    margin-left: 45px;
-    margin-right: 45px;
-    gap: 14px;
-    align-items: center;
-}
-
-
-
 
 @media (max-width: 1104px) {
     .menu {
@@ -311,12 +266,13 @@ nav {
         width: 800px;
         height: 1000px;
     }
-    
-    #home.goDown{
+
+    #home.goDown {
         margin-top: 450px;
     }
 
-    #text1,#text2 {
+    #text1,
+    #text2 {
         font-size: 40pt;
     }
 }
